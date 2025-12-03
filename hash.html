@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash - Website Belajar Blockchain</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="globals.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <style>
+        .page-content-wrapper {
+            position: relative; z-index: 10; padding-top: 150px; padding-bottom: 50px;
+            max-width: 1000px; margin: 0 auto; color: #fff;
+        }
+        .hash-module textarea { background: rgba(255, 255, 255, 0.9); color: #333; }
+        .explanation-content h3 { color: #00F39C; margin-top: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .explanation-content ul, .explanation-content ol { padding-left: 20px; color: #ddd; }
+        .explanation-content li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <img class="gradient" src="images/gradient.jpg" style="height: 100%; position: fixed; object-fit: cover;" />
+
+        <div class="text-wrapper"><a href="index.html">BlockChain</a></div>
+        <div class="div"><a href="about.html">About Me</a></div>
+        <div class="text-wrapper-2"><a href="index.html">Home</a></div>
+        <div class="text-wrapper-3"><a href="hash.html" style="color: #00F39C; font-weight: 700;">Hash</a></div>
+        <div class="text-wrapper-4"><a href="block.html">Block</a></div>
+        <div class="text-wrapper-5"><a href="blockchain.html">Block Chain</a></div>
+        <div class="text-wrapper-6"><a href="ecc_signature.html">ECC Signature</a></div>
+        <div class="text-wrapper-7"><a href="consensus.html">Konsensus</a></div>
+
+        <div class="page-content-wrapper container">
+            <h2 style="text-align: center;">Simulasi Hash SHA-256</h2>
+            
+            <section class="card hash-module" style="background: rgba(30,40,70,0.6); backdrop-filter: blur(10px); border: 1px solid rgba(0,243,156,0.2); margin-bottom: 30px;">
+                <div class="input-group">
+                    <label for="dataInput" style="color: #00F39C;">Input Teks / Data:</label>
+                    <textarea id="dataInput" rows="5" placeholder="Masukkan teks apa pun di sini..."></textarea>
+                </div>
+                <div class="result-group">
+                    <label for="hashOutput" style="color: #00F39C;">Hash SHA-256:</label>
+                    <textarea id="hashOutput" rows="2" readonly placeholder="Hasil Hash akan muncul di sini..."></textarea>
+                    <div class="hash-info" style="color: #aaa;">Panjang Hash: <span id="hashLength">0</span> karakter</div>
+                </div>
+            </section>
+
+            <section class="card explanation-content" style="background: rgba(10, 14, 39, 0.8); backdrop-filter: blur(10px); padding: 30px; border-radius: 10px;">
+                <h2 style="text-align: left; margin-bottom: 10px;">Pembelajaran & Cara Menggunakan</h2>
+                
+                <h3>Cara Menggunakan</h3>
+                <ol>
+                    <li><strong>Input Data:</strong> Ketik teks apa saja ke dalam kolom "Input Teks".</li>
+                    <li><strong>Observasi:</strong> Perhatikan kolom hasil Hash. Setiap perubahan satu huruf saja akan mengubah seluruh karakter hash.</li>
+                    <li><strong>Panjang Tetap:</strong> Lihat indikator panjang karakter. Hash SHA-256 selalu menghasilkan 64 karakter heksadesimal, berapapun panjang inputnya.</li>
+                </ol>
+
+                <h3>Konsep Teknis: SHA-256</h3>
+                <p><strong>SHA-256 (Secure Hash Algorithm 256-bit)</strong> adalah fungsi matematika satu arah yang menjadi fondasi keamanan Blockchain.</p>
+                <ul>
+                    <li><strong>Deterministik:</strong> Input yang sama pasti menghasilkan output yang sama.</li>
+                    <li><strong>Avalanche Effect:</strong> Perubahan kecil pada input menyebabkan perubahan drastis pada output (tidak bisa ditebak).</li>
+                    <li><strong>Pre-image Resistance:</strong> Mustahil mengembalikan Hash menjadi data aslinya.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/hash_logic.js"></script>
+</body>
+</html>
